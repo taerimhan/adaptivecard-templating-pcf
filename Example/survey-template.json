@@ -1,0 +1,85 @@
+{
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "${Title}",
+                    "size": "Large",
+                    "weight": "Bolder"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "${Introduction}",
+                    "spacing": "ExtraLarge",
+                    "wrap": true
+                }
+            ],
+            "style": "default"
+        },
+        {
+            "type": "Container",
+            "$data": "${Items}",
+            "items": [
+                {
+                    "$when": "${InputTypeName == 'Label'}",
+                    "type": "TextBlock",
+                    "text": "${Text}",
+                    "weight": "Bolder",
+                    "wrap": true
+                },
+                {
+                    "$when": "${InputTypeName == 'Text'}",
+                    "type": "Input.Text",
+                    "placeholder": "${Placeholder}",
+                    "id": "${Id}"
+                },
+                {
+                    "$when": "${InputTypeName == 'Multiline'}",
+                    "type": "Input.Text",
+                    "placeholder": "${Placeholder}",
+                    "isMultiline": true,
+                    "id": "${Id}"
+                },
+                {
+                    "$when": "${InputTypeName == 'Time'}",
+                    "type": "Input.Time",
+                    "id": "${Id}"
+                },
+                {
+                    "$when": "${InputTypeName == 'Date'}",
+                    "type": "Input.Date",
+                    "id": "${Id}"
+                },
+                {
+                    "$when": "${InputTypeName == 'Number'}",
+                    "type": "Input.Number",
+                    "id": "${Id}"
+                },
+                {
+                    "$when": "${InputTypeName == 'SingleChoice'}",
+                    "type": "Input.ChoiceSet",
+                    "choices": [
+                        {
+                            "$data": "${Choices}",
+                            "title": "${Title}",
+                            "value": "${Value}"
+                        }
+                    ],
+                    "id": "${Id}",
+                    "style": "expanded"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Submit Survey"
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="Tae.Pcf" constructor="AdaptiveCardControl" version="1.0.0" display-name-key="Adaptive Card Control" description-key="Adaptive Card Control" control-type="standard">
+    <property name="responseJson" display-name-key="Response Json" description-key="Bind a multiline text with response json" of-type="Multiple" usage="bound" required="true" />
+    <property name="templateRetrieveEntityType" display-name-key="Template retrieve entity type" description-key="Configure entity type where template json is stored" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="templateRetrieveOptions" display-name-key="Template retrieve options" description-key="Configure retrieve options where template is stored" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="templateRetrieveAttributeName" display-name-key="Template retrieve attribute name" description-key="Configure retrieve attribute name where template is stored" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="templateRetrieveFetchXml" display-name-key="Template retrieve fetch xml" description-key="Configure retrieve fetch XML where template json is stored" of-type="Multiple" usage="input" />
+    <property name="dataRetrieveEntityType" display-name-key="Data retrieve entity type" description-key="Configure entity type where data json is stored" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="dataRetrieveOptions" display-name-key="Data retrieve options" description-key="Configure retrieve options where data json is stored" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="dataRetrieveAttributeName" display-name-key="Data retrieve attribute name" description-key="Configure retrieve attribute name where data json is stored" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="dataRetrieveFetchXml" display-name-key="Data retrieve fetch xml" description-key="Configure retrieve fetch XML where data json is stored" of-type="Multiple" usage="input" />
+    <resources>
+      <code path="index.ts" order="1"/>
+    </resources>
+    <feature-usage>
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+  </control>
+</manifest>
